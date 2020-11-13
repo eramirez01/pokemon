@@ -3,6 +3,6 @@ package com.example.pokemoncards.model
 import com.fasterxml.jackson.annotation.JsonProperty
 
 class CardCollection {
-    @JsonProperty("cards")
+    @JsonProperty("data")
     val cards: List<Card>? = null
 }

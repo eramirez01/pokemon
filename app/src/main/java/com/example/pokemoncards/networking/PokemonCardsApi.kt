@@ -14,7 +14,7 @@ object PokemonCardsApi {
     private val client = OkHttpClient.Builder().build()
     private val retrofit = Retrofit.Builder()
         .client(client)
-        .baseUrl("https://api.pokemontcg.io/v1/")
+        .baseUrl("http://api.giphy.com/v1/")
         .addConverterFactory(
             JacksonConverterFactory.create(
                 ObjectMapper()
