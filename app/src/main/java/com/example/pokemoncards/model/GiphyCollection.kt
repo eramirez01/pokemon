@@ -2,7 +2,7 @@ package com.example.pokemoncards.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-class Card {
-    @JsonProperty("imageUrl")
-    var imageUrl: String? = null
+class GiphyCollection {
+    @JsonProperty("data")
+    val cards: List<GiphyItem>? = null
 }

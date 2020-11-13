@@ -6,14 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.bumptech.glide.Glide
 import com.example.pokemoncards.model.Card
 import com.example.pokemoncards.model.CardCollection
 import com.example.pokemoncards.networking.PokemonCardsApi
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-            Glide.with(holder.itemView.context).asGif().load(data[position].images?.downSized?.url).into(holder.itemView.findViewById(R.id.card_image_view))
+            Picasso.get().load(data[position].imageUrl).into(holder.itemView.findViewById<ImageView>(R.id.card_image_view))
         }
 
         override fun getItemCount() = data.size

@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CardsApi {
-    @GET("gifs/trending?api_key=cnSWATCVixm9lKU4gWPncyevkt8LaC1m")
+    @GET("cards")
     fun getAllCards(@Query("name") name: String? = null): Call<CardCollection>
 }

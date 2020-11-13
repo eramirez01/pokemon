@@ -9,12 +9,12 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
 
-object PokemonCardsApi {
+object GiphyGifsApi {
 
     private val client = OkHttpClient.Builder().build()
     private val retrofit = Retrofit.Builder()
         .client(client)
-        .baseUrl("https://api.pokemontcg.io/v1/")
+        .baseUrl("http://api.giphy.com/v1/")
         .addConverterFactory(
             JacksonConverterFactory.create(
                 ObjectMapper()
@@ -29,5 +29,5 @@ object PokemonCardsApi {
         .build()
 
     @get:Synchronized
-    val cardsApi: CardsApi = retrofit.create(CardsApi::class.java)
+    val cardsApi: GiphyApi = retrofit.create(GiphyApi::class.java)
 }
